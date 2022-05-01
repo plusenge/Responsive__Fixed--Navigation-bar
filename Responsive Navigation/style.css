@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+nav{
+    display: flex;
+    width: 100%;
+    position: fixed;
+    font-family: 'Poppins',sans-serif;
+    justify-content:space-around;
+    align-items: center;
+    min-height:8vh;
+    background-color: rgba(0, 0, 2, 0.791);
+    box-shadow: 0 8px 6px -6px rgba(255, 255, 255, 0.137);
+}
+
+
+.logo{ 
+    color:#fff;
+    text-transform: upperCase;
+    letter-spacing: 3px;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: space-around;
+    width: 40%;
+} 
+.nav-links li {
+    list-style-type: none;
+}
+.nav-links li a{
+    text-decoration: none;
+    color: rgb(226, 226, 226);
+    letter-spacing: 2px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.burger{
+    display: none;
+}
+
+section {
+    background: linear-gradient(rgba(16, 16, 16, 0.488), rgba(14, 14, 14, 0.667)), url('bg.jpg');
+    width: 100vw;
+    height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+/*--========= Burger Line ==========--*/
+.line{
+    width: 25px;
+    height: 3px;
+    background-color: rgb(226, 226, 226);
+    margin: 5px;
+    transition: all linear .2s;
+}
+
+/*--========= MEDIA QUERY SMALL DEVICE ==========--*/
+@media (max-width: 1024px) {
+    .nav-links {
+        width: 45%;
+}
+}
+@media (max-width: 768px){
+    body {
+        overflow-x: hidden;
+    }
+    .nav-links {
+        position: absolute;
+        right: 0;
+        height: 92vh;
+        top: 8vh;
+        background-color: rgba(0, 0, 2, 0.941);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 45%;
+        transform: translateX(100%);
+        transition: transform .5s ease-in;
+    }
+    .nav-links li{
+        opacity: 0;
+    }
+    .burger {
+        display: block;
+        cursor: pointer;
+    }
+   .nav-active{
+       transform: translateX(0%);
+   }
+
+@keyframes navLinkFade{
+    from{
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/*--========= ADD TOGGLE CLASS ==========--*/
+.toggle .line1{
+    transform: rotate(45deg) translate(5px, 6px);
+}
+.toggle .line2{
+    opacity: 0;
+}
+.toggle .line3{
+transform: rotate(-45deg) translate(5px,-6PX)
+}
+}
